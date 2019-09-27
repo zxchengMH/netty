@@ -3,9 +3,6 @@ package com.example.nettyserver.rs;
 import com.example.nettyserver.config.channel.ChannelHandlerPool;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 
@@ -27,9 +24,5 @@ public class MySendTask {
         String time = LocalDateTime.now().toString();
         //System.err.println("执行静态定时任务时间: " + time);
         ChannelHandlerPool.sendMessage("zxc", time);
-    }
-
-    public void test(@RequestBody String data, @RequestParam("aa") String aa, @PathVariable("sad") String a){
-
     }
 }
